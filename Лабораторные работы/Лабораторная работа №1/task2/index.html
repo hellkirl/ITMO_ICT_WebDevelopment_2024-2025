@@ -484,6 +484,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -600,6 +609,12 @@
    Отправим сообщение серверу и выведем ответ в консоль.</li>
 <li>Запустим сервер на порте <code>8080</code> и клиент. Проверим, что все работает корректно.</li>
 </ol>
+<h2 id="_3">Запуск</h2>
+<p>Сначала запустим сервер, а затем клиент:</p>
+<pre><code class="language-shell">go run server.go
+</code></pre>
+<pre><code class="language-shell">go run client.go -a=positive_number -b=positive_number
+</code></pre>
 
 
 
