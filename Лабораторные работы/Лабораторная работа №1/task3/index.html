@@ -505,6 +505,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Код сервера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Код клиента
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -598,6 +625,82 @@ HTML-страницу, которая сервер подгружает из
 <li>С клиента отправим GET-запрос на сервер и выведем ответ в консоль.</li>
 <li>Запустим сервер и проверим, что он отдает содержимое файла <code>index.html</code>.</li>
 </ol>
+<h2 id="_3">Код сервера</h2>
+<pre><code class="language-go">package main
+
+import (
+    &quot;html/template&quot;
+    &quot;log&quot;
+    &quot;net/http&quot;
+    &quot;os&quot;
+    &quot;path/filepath&quot;
+)
+
+var tmpl *template.Template
+
+func main() {
+    mux := http.NewServeMux()
+    mux.HandleFunc(&quot;/&quot;, handleHomePage)
+
+    err := http.ListenAndServe(&quot;:8080&quot;, mux)
+    if err != nil {
+        log.Fatalf(&quot;Failed to start server&quot;)
+    }
+}
+
+func init() {
+    cwd, err := os.Getwd()
+    if err != nil {
+        log.Fatalf(&quot;Failed to get current working directory: %v&quot;, err)
+    }
+
+    tmplPath := filepath.Join(cwd, &quot;students&quot;, &quot;k3342&quot;, &quot;Privalov_Kirill&quot;, &quot;lr1&quot;, &quot;3&quot;, &quot;static&quot;, &quot;index.html&quot;)
+    tmpl, err = template.ParseFiles(tmplPath)
+    if err != nil {
+        log.Fatalf(&quot;[server][ParseFiles]: %v&quot;, err)
+    }
+}
+
+func handleHomePage(w http.ResponseWriter, r *http.Request) {
+    err := tmpl.Execute(w, nil)
+    if err != nil {
+        log.Fatalf(&quot;Failed to parse index.html&quot;)
+    }
+}
+</code></pre>
+<h2 id="_4">Код клиента</h2>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;io&quot;
+    &quot;log&quot;
+    &quot;net/http&quot;
+)
+
+func main() {
+    resp, err := http.Get(&quot;http://localhost:8080&quot;)
+    if err != nil {
+        log.Fatalf(&quot;Failed to create a request: %v&quot;, err)
+    }
+    defer resp.Body.Close()
+
+    fmt.Printf(&quot;%s %s\n&quot;, resp.Proto, resp.Status)
+
+    for key, values := range resp.Header {
+        for _, value := range values {
+            fmt.Printf(&quot;%s: %s\n&quot;, key, value)
+        }
+    }
+
+    body, err := io.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatalf(&quot;Failed to read response body: %v&quot;, err)
+    }
+    fmt.Println(string(body))
+}
+</code></pre>
+<h2 id="_5">Запуск</h2>
 <p>Сначала запустим сервер, а затем клиент:</p>
 <pre><code class="language-bash">go run server.go
 </code></pre>

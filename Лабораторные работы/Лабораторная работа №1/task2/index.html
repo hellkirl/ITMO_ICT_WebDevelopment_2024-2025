@@ -487,6 +487,24 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
+      Код сервера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Код клиента
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
       Запуск
     </span>
   </a>
@@ -609,7 +627,120 @@
    Отправим сообщение серверу и выведем ответ в консоль.</li>
 <li>Запустим сервер на порте <code>8080</code> и клиент. Проверим, что все работает корректно.</li>
 </ol>
-<h2 id="_3">Запуск</h2>
+<h2 id="_3">Код сервера</h2>
+<pre><code class="language-go">package main
+
+import (
+   &quot;bufio&quot;
+   &quot;fmt&quot;
+   &quot;log&quot;
+   &quot;net&quot;
+)
+
+func main() {
+   tcpAddr, err := net.ResolveTCPAddr(&quot;tcp&quot;, &quot;:8080&quot;)
+   if err != nil {
+      log.Fatalf(&quot;[server][ResolveTCPAddr]: %v&quot;, err)
+   }
+
+   listener, err := net.ListenTCP(&quot;tcp&quot;, tcpAddr)
+   if err != nil {
+      log.Fatalf(&quot;[server][ListenTCP]: %v&quot;, err)
+   }
+   defer listener.Close()
+
+   for {
+      conn, err := listener.Accept()
+      if err != nil {
+         log.Printf(&quot;[server][Accept]: %v&quot;, err)
+         continue
+      }
+
+      go handleConnection(conn)
+   }
+}
+
+func handleConnection(conn net.Conn) {
+   defer conn.Close()
+
+   data, err := bufio.NewReader(conn).ReadString('\n')
+   if err != nil {
+      log.Printf(&quot;[server][ReadString]: %v&quot;, err)
+      return
+   }
+
+   result, err := handleParams(data)
+   if err != nil {
+      log.Printf(&quot;[server][handleParams]: %v&quot;, err)
+      return
+   }
+
+   _, err = conn.Write([]byte(fmt.Sprintf(&quot;%d&quot;, result)))
+   if err != nil {
+      log.Printf(&quot;[server][Write]: %v&quot;, err)
+   }
+}
+
+func handleParams(params string) (uint, error) {
+   if params == &quot;&quot; {
+      return 0, fmt.Errorf(&quot;empty params&quot;)
+   }
+
+   var a, b uint
+   _, err := fmt.Sscanf(params, &quot;%d, %d&quot;, &amp;a, &amp;b)
+   if err != nil {
+      return 0, fmt.Errorf(&quot;invalid params: %v&quot;, err)
+   }
+   fmt.Println(a, b)
+
+   return a * b, nil
+}
+</code></pre>
+<h2 id="_4">Код клиента</h2>
+<pre><code class="language-go">package main
+
+import (
+   &quot;flag&quot;
+   &quot;fmt&quot;
+   &quot;log&quot;
+   &quot;net&quot;
+)
+
+var a, b uint
+
+func main() {
+   tcpAddr, err := net.ResolveTCPAddr(&quot;tcp&quot;, &quot;:8080&quot;)
+   if err != nil {
+      log.Fatalf(&quot;[client][ResolveTCPAddr]: %v&quot;, err)
+   }
+
+   conn, err := net.DialTCP(&quot;tcp&quot;, nil, tcpAddr)
+   if err != nil {
+      log.Fatalf(&quot;[client][DialTCP]: %v&quot;, err)
+   }
+   defer conn.Close()
+
+   _, err = conn.Write([]byte(fmt.Sprintf(&quot;%d, %d\n&quot;, a, b)))
+   if err != nil {
+      log.Fatalf(&quot;[client][Write]: %v&quot;, err)
+   }
+
+   var buf [1024]byte
+   n, err := conn.Read(buf[0:])
+   if err != nil {
+      log.Fatalf(&quot;[client][Read]: %v&quot;, err)
+   }
+
+   fmt.Println(string(buf[:n]))
+}
+
+func init() {
+   flag.UintVar(&amp;a, &quot;a&quot;, 0, &quot;Parameter a&quot;)
+   flag.UintVar(&amp;b, &quot;b&quot;, 0, &quot;Parameter b&quot;)
+   flag.Parse()
+}
+</code></pre>
+<h2 id="_5">Запуск</h2>
 <p>Сначала запустим сервер, а затем клиент:</p>
 <pre><code class="language-shell">go run server.go
 </code></pre>

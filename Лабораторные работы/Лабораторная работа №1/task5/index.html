@@ -548,6 +548,15 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
+      Код сервера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       Запуск
     </span>
   </a>
@@ -608,7 +617,115 @@
 <li>Создадим структуру <code>Grade</code> для хранения информации об оценке.</li>
 <li>Напишем функции для обработки сущесвующих эндпоинтов. Также используем <code>html/template</code> для генерации HTML-страницы.</li>
 </ol>
-<h2 id="_3">Запуск</h2>
+<h2 id="_3">Код сервера</h2>
+<pre><code class="language-go">package main
+
+import (
+   &quot;encoding/json&quot;
+   &quot;html/template&quot;
+   &quot;log&quot;
+   &quot;net/http&quot;
+   &quot;sync&quot;
+)
+
+type Grade struct {
+   Subject string `json:&quot;subject&quot;`
+   Grade   int    `json:&quot;grade,omitempty&quot;`
+}
+
+var (
+   gradesMap = make(map[string][]Grade)
+   mu        sync.Mutex
+)
+
+func main() {
+   mux := setUpMux()
+
+   err := run(mux)
+   if err != nil {
+      log.Fatalf(&quot;Failed to start server: %v&quot;, err)
+   }
+}
+
+func run(mux *http.ServeMux) error {
+   return http.ListenAndServe(&quot;:8080&quot;, mux)
+}
+
+func setUpMux() *http.ServeMux {
+   mux := http.NewServeMux()
+   mux.HandleFunc(&quot;/&quot;, handleHomePage)
+   mux.HandleFunc(&quot;/new-grade&quot;, handleNewGrade)
+   return mux
+}
+
+func handleHomePage(w http.ResponseWriter, r *http.Request) {
+   mu.Lock()
+   defer mu.Unlock()
+
+   tmpl := `
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Grades&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;All Grades&lt;/h1&gt;
+    &lt;table border=&quot;1&quot;&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Subject&lt;/th&gt;
+            &lt;th&gt;Grades&lt;/th&gt;
+        &lt;/tr&gt;
+        {{range $subject, $grades := .}}
+        &lt;tr&gt;
+            &lt;td&gt;{{$subject}}&lt;/td&gt;
+            &lt;td&gt;
+                {{range $grades}}
+                    {{.Grade}} 
+                {{end}}
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        {{else}}
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot;&gt;No grades available&lt;/td&gt;
+        &lt;/tr&gt;
+        {{end}}
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+`
+   t := template.Must(template.New(&quot;grades&quot;).Parse(tmpl))
+   if err := t.Execute(w, gradesMap); err != nil {
+      http.Error(w, &quot;Internal Server Error&quot;, http.StatusInternalServerError)
+   }
+}
+
+func handleNewGrade(w http.ResponseWriter, r *http.Request) {
+   if r.Method != http.MethodPost {
+      http.Error(w, &quot;Method is not allowed&quot;, http.StatusMethodNotAllowed)
+      return
+   }
+
+   var newGrade Grade
+   decoder := json.NewDecoder(r.Body)
+   if err := decoder.Decode(&amp;newGrade); err != nil {
+      http.Error(w, &quot;Invalid JSON&quot;, http.StatusBadRequest)
+      return
+   }
+   defer r.Body.Close()
+
+   if newGrade.Subject == &quot;&quot; || newGrade.Grade &lt; 0 || newGrade.Grade &gt; 5 {
+      http.Error(w, &quot;Invalid grade data&quot;, http.StatusBadRequest)
+      return
+   }
+
+   mu.Lock()
+   gradesMap[newGrade.Subject] = append(gradesMap[newGrade.Subject], newGrade)
+   mu.Unlock()
+
+   w.WriteHeader(http.StatusNoContent)
+}
+</code></pre>
+<h2 id="_4">Запуск</h2>
 <pre><code class="language-bash">go run server.go
 </code></pre>
 

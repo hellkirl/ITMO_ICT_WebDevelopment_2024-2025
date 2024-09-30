@@ -529,6 +529,24 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
+      Код сервера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Код клиента
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
       Запуск
     </span>
   </a>
@@ -606,7 +624,189 @@
 <li>Напишем код клиента, используя TCP socket. Определим бизнес-логику клиента: регистрация новых пользователей,
    отправка сообщений, получение сообщений.</li>
 </ol>
-<h2 id="_3">Запуск</h2>
+<h2 id="_3">Код сервера</h2>
+<pre><code class="language-go">package main
+
+import (
+    &quot;bufio&quot;
+    &quot;fmt&quot;
+    &quot;math/rand&quot;
+    &quot;net&quot;
+    &quot;strings&quot;
+    &quot;sync&quot;
+    &quot;time&quot;
+)
+
+type Client struct {
+    Name   string
+    Color  string
+    Conn   net.Conn
+    Reader *bufio.Reader
+}
+
+var (
+    clients   = make(map[string]Client)
+    clientsMu sync.Mutex
+    colors    = []string{
+        &quot;\033[31m&quot;, // Red
+        &quot;\033[32m&quot;, // Green
+        &quot;\033[33m&quot;, // Yellow
+        &quot;\033[34m&quot;, // Blue
+        &quot;\033[35m&quot;, // Magenta
+        &quot;\033[36m&quot;, // Cyan
+    }
+    resetColor = &quot;\033[0m&quot;
+)
+
+func isNameTaken(name string) bool {
+    clientsMu.Lock()
+    defer clientsMu.Unlock()
+
+    _, exists := clients[name]
+    return exists
+}
+
+func broadcastMessage(senderName, senderColor, message string) {
+    clientsMu.Lock()
+    defer clientsMu.Unlock()
+
+    for _, client := range clients {
+        if client.Name != senderName {
+            client.Conn.Write([]byte(senderColor + senderName + &quot;: &quot; + message + resetColor + &quot;\n&quot;))
+        }
+    }
+}
+
+func handleConnection(conn net.Conn) {
+    defer conn.Close()
+
+    reader := bufio.NewReader(conn)
+    var name string
+
+    for {
+        nameInput, _ := reader.ReadString('\n')
+        name = strings.TrimSpace(nameInput)
+
+        if name == &quot;&quot; {
+            conn.Write([]byte(&quot;Name cannot be empty. Try again.\n&quot;))
+            continue
+        }
+
+        if isNameTaken(name) {
+            conn.Write([]byte(&quot;Name is already taken. Choose a different name.\n&quot;))
+        } else {
+            break
+        }
+    }
+
+    clientColor := colors[rand.Intn(len(colors))]
+
+    client := Client{
+        Name:   name,
+        Color:  clientColor,
+        Conn:   conn,
+        Reader: reader,
+    }
+
+    clientsMu.Lock()
+    clients[name] = client
+    clientsMu.Unlock()
+
+    fmt.Printf(&quot;%s has joined the chat\n&quot;, name)
+
+    conn.Write([]byte(&quot;Welcome to the chat, &quot; + name + &quot;!\n&quot;))
+    broadcastMessage(&quot;Server&quot;, &quot;&quot;, name+&quot; has joined the chat!&quot;)
+
+    for {
+        message, err := reader.ReadString('\n')
+        if err != nil {
+            break
+        }
+        message = strings.TrimSpace(message)
+
+        if message != &quot;&quot; {
+            broadcastMessage(name, client.Color, message)
+        }
+    }
+
+    clientsMu.Lock()
+    delete(clients, name)
+    clientsMu.Unlock()
+
+    broadcastMessage(&quot;Server&quot;, &quot;&quot;, name+&quot; has left the chat&quot;)
+    fmt.Printf(&quot;%s has left the chat\n&quot;, name)
+}
+
+func main() {
+    rand.NewSource(time.Now().UnixNano())
+    listener, err := net.Listen(&quot;tcp&quot;, &quot;:8080&quot;)
+    if err != nil {
+        fmt.Println(&quot;Error starting server:&quot;, err)
+        return
+    }
+    defer listener.Close()
+
+    fmt.Println(&quot;Chat server started on port 8080&quot;)
+
+    for {
+        conn, err := listener.Accept()
+        if err != nil {
+            fmt.Println(&quot;Error accepting connection:&quot;, err)
+            continue
+        }
+        go handleConnection(conn)
+    }
+}
+</code></pre>
+<h2 id="_4">Код клиента</h2>
+<pre><code class="language-go">package main
+
+import (
+    &quot;bufio&quot;
+    &quot;fmt&quot;
+    &quot;net&quot;
+    &quot;os&quot;
+    &quot;strings&quot;
+)
+
+func init() {
+    fmt.Println(&quot;Enter your name.&quot;)
+}
+
+func main() {
+    conn, err := net.Dial(&quot;tcp&quot;, &quot;localhost:8080&quot;)
+    if err != nil {
+        fmt.Println(&quot;Error connecting to server:&quot;, err)
+        return
+    }
+    defer conn.Close()
+
+    go func() {
+        reader := bufio.NewReader(conn)
+        for {
+            message, err := reader.ReadString('\n')
+            if err != nil {
+                fmt.Println(&quot;Disconnected from server&quot;)
+                return
+            }
+            fmt.Print(message)
+        }
+    }()
+
+    writer := bufio.NewWriter(conn)
+    scanner := bufio.NewScanner(os.Stdin)
+
+    for scanner.Scan() {
+        message := scanner.Text()
+        message = strings.TrimSpace(message)
+        if message != &quot;&quot; {
+            writer.WriteString(message + &quot;\n&quot;)
+            writer.Flush()
+        }
+    }
+}
+</code></pre>
+<h2 id="_5">Запуск</h2>
 <p>Сначала запустим сервер, а затем клиент и введем имя пользователя:</p>
 <pre><code class="language-bash">go run server.go
 </code></pre>
