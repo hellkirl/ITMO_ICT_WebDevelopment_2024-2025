@@ -1,0 +1,53 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Автогонки{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'races/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="{% url 'race_list' %}">
+                    Автогонки
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li style="color: #1a202c">Привет, {{ user.username }}</li>
+                        <li><a href="{% url 'logout' %}">Выйти</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Войти</a></li>
+                        <li><a href="{% url 'signup' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Отображение сообщений -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Автогонки</p>
+        </div>
+    </footer>
+</body>
+</html>

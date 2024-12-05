@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load dict_filters %}
+
+{% block title %}Детали гонки{% endblock %}
+
+{% block content %}
+<h2>{{ race.name }}</h2>
+<p><strong>Дата:</strong> {{ race.date }}</p>
+<p><strong>Время:</strong> {{ race.time }}</p>
+<p><strong>Результат:</strong> {{ race.result }}</p>
+
+<h3>Участники</h3>
+<ul>
+    {% for registration in registrations %}
+    <li>{{ registration.user.username }}</li>
+    {% empty %}
+    <li>Нет зарегистрированных участников.</li>
+    {% endfor %}
+</ul>
+
+<h3>Комментарии</h3>
+<ul>
+    {% for comment in comments %}
+    <li>
+        <strong>{{ comment.user.username }}</strong> ({{ comment.date }}):
+        {{ comment.text }} - {{ comment.get_comment_type_display }} - Оценка: {{ comment.rating }}
+    </li>
+    {% empty %}
+    <li>Нет комментариев.</li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+    <p><a href="{% url 'add_comment' %}" class="btn btn-primary">Добавить комментарий</a></p>
+{% else %}
+    <p><a href="{% url 'login' %}" class="btn btn-secondary">Войдите</a> или <a href="{% url 'signup' %}" class="btn btn-secondary">зарегистрируйтесь</a>, чтобы оставить комментарий.</p>
+{% endif %}
+{% endblock %}

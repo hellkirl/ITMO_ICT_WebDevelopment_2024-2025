@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load dict_filters %}
+
+{% block title %}Список гонок{% endblock %}
+
+{% block content %}
+<h2>Список гонок</h2>
+<ul class="list-group">
+    {% for race in races %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+            <a href="{% url 'race_detail' race.pk %}" class="fw-bold">{{ race.name }}</a> - {{ race.date }}
+        </div>
+        {% if user.is_authenticated %}
+            {% if race.id in registration_dict %}
+                {% with registration=registration_dict|get_item:race.id %}
+                    <div>
+                        <a href="{% url 'delete_registration' registration.pk %}" class="btn btn-sm btn-danger">Удалить</a>
+                    </div>
+                {% endwith %}
+            {% else %}
+                <div>
+                    <form method="post" action="{% url 'register_racer' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="race_id" value="{{ race.id }}">
+                        <button type="submit" class="btn btn-sm btn-success">Зарегистрироваться</button>
+                    </form>
+                </div>
+            {% endif %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% if not races %}
+    <p>Нет доступных гонок.</p>
+{% endif %}
+{% endblock %}
