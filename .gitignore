@@ -74,7 +74,6 @@ cover/
 instance/
 .webassets-cache
 .scrapy
-docs/_build/
 .pybuilder/
 target/
 .ipynb_checkpoints
@@ -101,3 +100,5 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
+docs/
+mkdocs.yaml
