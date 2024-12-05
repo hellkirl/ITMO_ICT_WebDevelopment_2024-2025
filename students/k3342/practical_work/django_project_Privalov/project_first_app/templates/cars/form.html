@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if form.instance.pk %}Edit Car{% else %}Add New Car{% endif %}{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Edit Car{% else %}Add New Car{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+        <a href="{% url 'car-list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

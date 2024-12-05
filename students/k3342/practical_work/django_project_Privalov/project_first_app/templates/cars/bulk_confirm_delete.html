@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Bulk Delete Cars{% endblock %}
+
+{% block content %}
+    <h1>Bulk Delete Cars</h1>
+    <p>Are you sure you want to delete the following cars?</p>
+    <ul>
+        {% for car in cars %}
+            <li>{{ car }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {% for car in cars %}
+            <input type="hidden" name="selected_cars" value="{{ car.id }}">
+        {% endfor %}
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a href="{% url 'car-list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

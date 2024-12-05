@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Owner Details{% endblock %}
+
+{% block content %}
+    <h1>Owner Details</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Username</th>
+            <td>{{ owner.username }}</td>
+        </tr>
+        <tr>
+            <th>Full Name</th>
+            <td>{{ owner.first_name }} {{ owner.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Birth Date</th>
+            <td>{{ owner.birth_date }}</td>
+        </tr>
+        <tr>
+            <th>Passport Number</th>
+            <td>{{ owner.passport_number }}</td>
+        </tr>
+        <tr>
+            <th>Home Address</th>
+            <td>{{ owner.home_address }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ owner.nationality }}</td>
+        </tr>
+    </table>
+
+    <h2>Owned Cars</h2>
+    <ul>
+        {% for car in owner.cars.all %}
+            <li>{{ car }}</li>
+        {% empty %}
+            <li>No cars owned.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'owner-update' owner.id %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'owner-delete' owner.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'owner-list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Bulk Delete Owners{% endblock %}
+
+{% block content %}
+    <h1>Bulk Delete Owners</h1>
+    <p>Are you sure you want to delete the following owners?</p>
+    <ul>
+        {% for owner in owners %}
+            <li>{{ owner }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {% for owner in owners %}
+            <input type="hidden" name="selected_owners" value="{{ owner.id }}">
+        {% endfor %}
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a href="{% url 'owner-list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

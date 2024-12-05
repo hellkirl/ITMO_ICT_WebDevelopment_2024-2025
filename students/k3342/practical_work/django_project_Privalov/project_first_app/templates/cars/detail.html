@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Car Details{% endblock %}
+
+{% block content %}
+    <h1>Car Details</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>License Plate</th>
+            <td>{{ car.license_plate }}</td>
+        </tr>
+        <tr>
+            <th>Brand</th>
+            <td>{{ car.brand }}</td>
+        </tr>
+        <tr>
+            <th>Model</th>
+            <td>{{ car.model }}</td>
+        </tr>
+        <tr>
+            <th>Color</th>
+            <td>{{ car.color }}</td>
+        </tr>
+    </table>
+    <a href="{% url 'car-update' car.id %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'car-delete' car.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'car-list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

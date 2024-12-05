@@ -101,4 +101,4 @@ dmypy.json
 .pytype/
 cython_debug/
 docs/
-mkdocs.yaml
+mkdocs.*

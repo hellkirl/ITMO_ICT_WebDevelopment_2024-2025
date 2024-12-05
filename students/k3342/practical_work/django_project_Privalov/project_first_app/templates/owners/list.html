@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Owners List{% endblock %}
+
+{% block content %}
+    <h1>Owners</h1>
+    <a href="{% url 'owner-create' %}" class="btn btn-primary mb-3">Add New Owner</a>
+    <form method="post" action="{% url 'owner-bulk-delete' %}">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"><input type="checkbox" id="select-all"></th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Passport Number</th>
+                    <th scope="col">Nationality</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for owner in owners %}
+                <tr>
+                    <td><input type="checkbox" name="selected_owners" value="{{ owner.id }}"></td>
+                    <td>{{ owner.username }}</td>
+                    <td>{{ owner.first_name }} {{ owner.last_name }}</td>
+                    <td>{{ owner.passport_number }}</td>
+                    <td>{{ owner.nationality }}</td>
+                    <td>
+                        <a href="{% url 'owner-detail' owner.id %}" class="btn btn-info btn-sm">View</a>
+                        <a href="{% url 'owner-update' owner.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'owner-delete' owner.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No owners available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-danger">Delete Selected</button>
+    </form>
+
+    <script>
+        document.getElementById('select-all').addEventListener('click', function(event){
+            const checkboxes = document.querySelectorAll('input[name="selected_owners"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = event.target.checked;
+            });
+        });
+    </script>
+{% endblock %}
