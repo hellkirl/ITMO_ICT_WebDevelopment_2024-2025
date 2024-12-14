@@ -1,0 +1,4056 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../leetcode/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Отчет - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Отчет
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Введение
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Отчеты
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Отчеты
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%E2%84%961/report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Отчет
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%E2%84%962/leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%E2%84%962/report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Отчет
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Отчет
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Отчет
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Безопасность
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание эндпоинтов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание эндпоинтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагнозы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагнозы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/diagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/diagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Врачи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Врачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1doctors" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/doctors/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1doctors" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/doctors/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Трудовые Договоры
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Трудовые Договоры">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1laborcontracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/laborcontracts/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1laborcontracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/laborcontracts/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Медицинские Карты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Медицинские Карты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1medicalcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/medicalcards/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1medicalcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/medicalcards/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Кабинеты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Кабинеты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1offices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/offices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1offices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/offices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пациенты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пациенты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/patients/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/patients/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Платежи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Платежи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/payments/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/payments/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Должности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Должности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/positions/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/positions/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Расписания
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Расписания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/schedules/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/schedules/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цены на Услуги
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Цены на Услуги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1serviceprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/serviceprices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1serviceprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/serviceprices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Услуги
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Услуги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1services" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/services/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1services" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/services/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагнозы Визитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагнозы Визитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitdiagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitdiagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visitdiagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visitdiagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Визиты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Визиты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visits" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visits/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visits" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visits/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Услуги Визитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Услуги Визитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitservices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visitservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visitservices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Аутентификация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/create/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtrefresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/refresh/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtverify" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/verify/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/activation/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersresend_activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/resend_activation/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_password/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_password_confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_password_confirm/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_username/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_username_confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_username_confirm/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersset_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/set_password/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersset_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/set_username/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Безопасность
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание эндпоинтов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Описание эндпоинтов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагнозы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагнозы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/diagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/diagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1diagnosesdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/diagnoses/{DiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Врачи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Врачи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1doctors" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/doctors/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1doctors" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/doctors/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1doctorsdoctorid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/doctors/{DoctorID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Трудовые Договоры
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Трудовые Договоры">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1laborcontracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/laborcontracts/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1laborcontracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/laborcontracts/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1laborcontractscontractid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/laborcontracts/{ContractID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Медицинские Карты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Медицинские Карты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1medicalcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/medicalcards/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1medicalcards" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/medicalcards/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1medicalcardsmedicalcardid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/medicalcards/{MedicalCardID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Кабинеты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Кабинеты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1offices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/offices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1offices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/offices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1officesofficeid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/offices/{OfficeID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пациенты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пациенты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/patients/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1patients" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/patients/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1patientspatientid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/patients/{PatientID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Платежи
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Платежи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/payments/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/payments/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1paymentspaymentid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/payments/{PaymentID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Должности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Должности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/positions/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/positions/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1positionspositionid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/positions/{PositionID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Расписания
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Расписания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/schedules/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1schedules" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/schedules/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1schedulesscheduleid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/schedules/{ScheduleID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цены на Услуги
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Цены на Услуги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1serviceprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/serviceprices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1serviceprices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/serviceprices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1servicepricesservicepriceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/serviceprices/{ServicePriceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Услуги
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Услуги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1services" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/services/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1services" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/services/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1servicesserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/services/{ServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагнозы Визитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагнозы Визитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitdiagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitdiagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visitdiagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visitdiagnoses/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitdiagnosesvisitdiagnosisid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visitdiagnoses/{VisitDiagnosisID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Визиты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Визиты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visits" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visits/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visits" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visits/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitsvisitid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visits/{VisitID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Услуги Визитов
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Услуги Визитов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitservices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiv1visitservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /api/v1/visitservices/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-apiv1visitservicesvisitserviceid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /api/v1/visitservices/{VisitServiceID}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Аутентификация
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/create/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtrefresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/refresh/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authjwtverify" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/jwt/verify/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/activation/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-authusersme" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /auth/users/me/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersresend_activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/resend_activation/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_password/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_password_confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_password_confirm/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_username/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersreset_username_confirm" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/reset_username_confirm/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersset_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/set_password/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-authusersset_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth/users/set_username/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PUT /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      PATCH /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-authusersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      DELETE /auth/users/{id}/
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">Отчет</h1>
+<h2 id="_2">Безопасность</h2>
+<p>В проекте используется JWT для авторизации на эндпоинтах.</p>
+<h2 id="_3">Описание эндпоинтов</h2>
+<h3 id="_4">Диагнозы</h3>
+<h4 id="get-apiv1diagnoses">GET <code>/api/v1/diagnoses/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех диагнозов.</li>
+</ul>
+<h4 id="post-apiv1diagnoses">POST <code>/api/v1/diagnoses/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Name</code> (строка, обязательное): Название диагноза.</li>
+<li><code>IllnessType</code> (строка, необязательное): Тип заболевания.</li>
+<li><code>Description</code> (строка, необязательное): Подробное описание.</li>
+<li><code>GeneralTreatmentRecommendations</code> (строка, необязательное): Общие рекомендации по лечению.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись диагноза.</li>
+</ul>
+<h4 id="get-apiv1diagnosesdiagnosisid">GET <code>/api/v1/diagnoses/{DiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DiagnosisID</code> (целое число, обязательное): Уникальный идентификатор диагноза.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного диагноза.</li>
+</ul>
+<h4 id="put-apiv1diagnosesdiagnosisid">PUT <code>/api/v1/diagnoses/{DiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DiagnosisID</code> (целое число, обязательное): Уникальный идентификатор диагноза.</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Name</code> (строка, обязательное)</li>
+<li><code>IllnessType</code> (строка, необязательное)</li>
+<li><code>Description</code> (строка, необязательное)</li>
+<li><code>GeneralTreatmentRecommendations</code> (строка, необязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий диагноз.</li>
+</ul>
+<h4 id="patch-apiv1diagnosesdiagnosisid">PATCH <code>/api/v1/diagnoses/{DiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DiagnosisID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий диагноз.</li>
+</ul>
+<h4 id="delete-apiv1diagnosesdiagnosisid">DELETE <code>/api/v1/diagnoses/{DiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DiagnosisID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный диагноз.</li>
+</ul>
+<hr />
+<h3 id="_5">Врачи</h3>
+<h4 id="get-apiv1doctors">GET <code>/api/v1/doctors/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех врачей.</li>
+</ul>
+<h4 id="post-apiv1doctors">POST <code>/api/v1/doctors/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>LastName</code> (строка, обязательное): Фамилия врача.</li>
+<li><code>FirstName</code> (строка, обязательное): Имя врача.</li>
+<li><code>MiddleName</code> (строка, необязательное): Отчество врача.</li>
+<li><code>Gender</code> (строка, обязательное): Пол (<code>M</code> или <code>F</code>).</li>
+<li><code>DateOfBirth</code> (дата, обязательное): Дата рождения.</li>
+<li><code>Education</code> (строка, необязательное): Образование.</li>
+<li><code>PositionID</code> (целое число, необязательное): Идентификатор должности.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись врача.</li>
+</ul>
+<h4 id="get-apiv1doctorsdoctorid">GET <code>/api/v1/doctors/{DoctorID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DoctorID</code> (целое число, обязательное): Уникальный идентификатор врача.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного врача.</li>
+</ul>
+<h4 id="put-apiv1doctorsdoctorid">PUT <code>/api/v1/doctors/{DoctorID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DoctorID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля врача (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет информацию о существующем враче.</li>
+</ul>
+<h4 id="patch-apiv1doctorsdoctorid">PATCH <code>/api/v1/doctors/{DoctorID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DoctorID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет информацию о существующем враче.</li>
+</ul>
+<h4 id="delete-apiv1doctorsdoctorid">DELETE <code>/api/v1/doctors/{DoctorID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>DoctorID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретного врача.</li>
+</ul>
+<hr />
+<h3 id="_6">Трудовые Договоры</h3>
+<h4 id="get-apiv1laborcontracts">GET <code>/api/v1/laborcontracts/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех трудовых договоров.</li>
+</ul>
+<h4 id="post-apiv1laborcontracts">POST <code>/api/v1/laborcontracts/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>StartDate</code> (дата, обязательное): Дата начала договора.</li>
+<li><code>EndDate</code> (дата, необязательное): Дата окончания договора.</li>
+<li><code>ContractDetails</code> (строка, необязательное): Детали договора.</li>
+<li><code>DoctorID</code> (целое число, обязательное): Идентификатор врача.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новый трудовой договор.</li>
+</ul>
+<h4 id="get-apiv1laborcontractscontractid">GET <code>/api/v1/laborcontracts/{ContractID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ContractID</code> (целое число, обязательное): Уникальный идентификатор договора.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного трудового договора.</li>
+</ul>
+<h4 id="put-apiv1laborcontractscontractid">PUT <code>/api/v1/laborcontracts/{ContractID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ContractID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля договора (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий трудовой договор.</li>
+</ul>
+<h4 id="patch-apiv1laborcontractscontractid">PATCH <code>/api/v1/laborcontracts/{ContractID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ContractID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий трудовой договор.</li>
+</ul>
+<h4 id="delete-apiv1laborcontractscontractid">DELETE <code>/api/v1/laborcontracts/{ContractID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ContractID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный трудовой договор.</li>
+</ul>
+<hr />
+<h3 id="_7">Медицинские Карты</h3>
+<h4 id="get-apiv1medicalcards">GET <code>/api/v1/medicalcards/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех медицинских карт.</li>
+</ul>
+<h4 id="post-apiv1medicalcards">POST <code>/api/v1/medicalcards/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>IssueDate</code> (дата, обязательное): Дата выдачи карты.</li>
+<li><code>Notes</code> (строка, необязательное): Примечания.</li>
+<li><code>PatientID</code> (целое число, обязательное): Идентификатор пациента.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую медицинскую карту.</li>
+</ul>
+<h4 id="get-apiv1medicalcardsmedicalcardid">GET <code>/api/v1/medicalcards/{MedicalCardID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>MedicalCardID</code> (целое число, обязательное): Уникальный идентификатор медицинской карты.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретной медицинской карты.</li>
+</ul>
+<h4 id="put-apiv1medicalcardsmedicalcardid">PUT <code>/api/v1/medicalcards/{MedicalCardID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>MedicalCardID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля медицинской карты (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующую медицинскую карту.</li>
+</ul>
+<h4 id="patch-apiv1medicalcardsmedicalcardid">PATCH <code>/api/v1/medicalcards/{MedicalCardID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>MedicalCardID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующую медицинскую карту.</li>
+</ul>
+<h4 id="delete-apiv1medicalcardsmedicalcardid">DELETE <code>/api/v1/medicalcards/{MedicalCardID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>MedicalCardID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную медицинскую карту.</li>
+</ul>
+<hr />
+<h3 id="_8">Кабинеты</h3>
+<h4 id="get-apiv1offices">GET <code>/api/v1/offices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех кабинетов.</li>
+</ul>
+<h4 id="post-apiv1offices">POST <code>/api/v1/offices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>OfficeNumber</code> (строка, обязательное): Номер кабинета.</li>
+<li><code>WorkingHoursStart</code> (строка, обязательное): Начало рабочего дня.</li>
+<li><code>WorkingHoursEnd</code> (строка, обязательное): Конец рабочего дня.</li>
+<li><code>InternalPhone</code> (строка, необязательное): Внутренний телефон.</li>
+<li><code>ResponsibleDoctorID</code> (целое число, необязательное): Идентификатор ответственного врача.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новый кабинет.</li>
+</ul>
+<h4 id="get-apiv1officesofficeid">GET <code>/api/v1/offices/{OfficeID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>OfficeID</code> (целое число, обязательное): Уникальный идентификатор кабинета.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного кабинета.</li>
+</ul>
+<h4 id="put-apiv1officesofficeid">PUT <code>/api/v1/offices/{OfficeID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>OfficeID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля кабинета (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий кабинет.</li>
+</ul>
+<h4 id="patch-apiv1officesofficeid">PATCH <code>/api/v1/offices/{OfficeID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>OfficeID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий кабинет.</li>
+</ul>
+<h4 id="delete-apiv1officesofficeid">DELETE <code>/api/v1/offices/{OfficeID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>OfficeID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный кабинет.</li>
+</ul>
+<hr />
+<h3 id="_9">Пациенты</h3>
+<h4 id="get-apiv1patients">GET <code>/api/v1/patients/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех пациентов.</li>
+</ul>
+<h4 id="post-apiv1patients">POST <code>/api/v1/patients/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>LastName</code> (строка, обязательное): Фамилия пациента.</li>
+<li><code>FirstName</code> (строка, обязательное): Имя пациента.</li>
+<li><code>MiddleName</code> (строка, необязательное): Отчество пациента.</li>
+<li><code>Gender</code> (строка, обязательное): Пол (<code>M</code> или <code>F</code>).</li>
+<li><code>DateOfBirth</code> (дата, обязательное): Дата рождения.</li>
+<li><code>Phone</code> (строка, необязательное): Контактный телефон.</li>
+<li><code>Address</code> (строка, необязательное): Адрес проживания.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись пациента.</li>
+</ul>
+<h4 id="get-apiv1patientspatientid">GET <code>/api/v1/patients/{PatientID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PatientID</code> (целое число, обязательное): Уникальный идентификатор пациента.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного пациента.</li>
+</ul>
+<h4 id="put-apiv1patientspatientid">PUT <code>/api/v1/patients/{PatientID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PatientID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля пациента (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет информацию о существующем пациенте.</li>
+</ul>
+<h4 id="patch-apiv1patientspatientid">PATCH <code>/api/v1/patients/{PatientID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PatientID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет информацию о существующем пациенте.</li>
+</ul>
+<h4 id="delete-apiv1patientspatientid">DELETE <code>/api/v1/patients/{PatientID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PatientID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную запись пациента.</li>
+</ul>
+<hr />
+<h3 id="_10">Платежи</h3>
+<h4 id="get-apiv1payments">GET <code>/api/v1/payments/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех платежей.</li>
+</ul>
+<h4 id="post-apiv1payments">POST <code>/api/v1/payments/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Amount</code> (десятичное число, обязательное): Сумма платежа.</li>
+<li><code>VisitServiceID</code> (целое число, обязательное): Идентификатор услуги визита.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись платежа.</li>
+</ul>
+<h4 id="get-apiv1paymentspaymentid">GET <code>/api/v1/payments/{PaymentID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PaymentID</code> (целое число, обязательное): Уникальный идентификатор платежа.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного платежа.</li>
+</ul>
+<h4 id="put-apiv1paymentspaymentid">PUT <code>/api/v1/payments/{PaymentID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PaymentID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля платежа (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий платеж.</li>
+</ul>
+<h4 id="patch-apiv1paymentspaymentid">PATCH <code>/api/v1/payments/{PaymentID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PaymentID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий платеж.</li>
+</ul>
+<h4 id="delete-apiv1paymentspaymentid">DELETE <code>/api/v1/payments/{PaymentID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PaymentID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный платеж.</li>
+</ul>
+<hr />
+<h3 id="_11">Должности</h3>
+<h4 id="get-apiv1positions">GET <code>/api/v1/positions/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех должностей.</li>
+</ul>
+<h4 id="post-apiv1positions">POST <code>/api/v1/positions/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Title</code> (строка, обязательное): Название должности.</li>
+<li><code>Category</code> (строка, необязательное): Категория должности.</li>
+<li><code>Salary</code> (десятичное число, обязательное): Размер зарплаты.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую должность.</li>
+</ul>
+<h4 id="get-apiv1positionspositionid">GET <code>/api/v1/positions/{PositionID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PositionID</code> (целое число, обязательное): Уникальный идентификатор должности.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретной должности.</li>
+</ul>
+<h4 id="put-apiv1positionspositionid">PUT <code>/api/v1/positions/{PositionID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PositionID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля должности (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующую должность.</li>
+</ul>
+<h4 id="patch-apiv1positionspositionid">PATCH <code>/api/v1/positions/{PositionID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PositionID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующую должность.</li>
+</ul>
+<h4 id="delete-apiv1positionspositionid">DELETE <code>/api/v1/positions/{PositionID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>PositionID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную должность.</li>
+</ul>
+<hr />
+<h3 id="_12">Расписания</h3>
+<h4 id="get-apiv1schedules">GET <code>/api/v1/schedules/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех расписаний.</li>
+</ul>
+<h4 id="post-apiv1schedules">POST <code>/api/v1/schedules/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Date</code> (дата, обязательное): Дата расписания.</li>
+<li><code>IsWorkingDay</code> (логическое, обязательное): Является ли рабочим днем.</li>
+<li><code>Shift</code> (строка, необязательное): Детали смены.</li>
+<li><code>DoctorID</code> (целое число, обязательное): Идентификатор врача.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новое расписание.</li>
+</ul>
+<h4 id="get-apiv1schedulesscheduleid">GET <code>/api/v1/schedules/{ScheduleID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ScheduleID</code> (целое число, обязательное): Уникальный идентификатор расписания.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного расписания.</li>
+</ul>
+<h4 id="put-apiv1schedulesscheduleid">PUT <code>/api/v1/schedules/{ScheduleID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ScheduleID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля расписания (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующее расписание.</li>
+</ul>
+<h4 id="patch-apiv1schedulesscheduleid">PATCH <code>/api/v1/schedules/{ScheduleID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ScheduleID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующее расписание.</li>
+</ul>
+<h4 id="delete-apiv1schedulesscheduleid">DELETE <code>/api/v1/schedules/{ScheduleID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ScheduleID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретное расписание.</li>
+</ul>
+<hr />
+<h3 id="_13">Цены на Услуги</h3>
+<h4 id="get-apiv1serviceprices">GET <code>/api/v1/serviceprices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех цен на услуги.</li>
+</ul>
+<h4 id="post-apiv1serviceprices">POST <code>/api/v1/serviceprices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Price</code> (десятичное число, обязательное): Сумма цены.</li>
+<li><code>ValidFrom</code> (дата, обязательное): Дата начала действия цены.</li>
+<li><code>ValidTo</code> (дата, необязательное): Дата окончания действия цены.</li>
+<li><code>ServiceID</code> (целое число, обязательное): Идентификатор услуги.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую цену на услугу.</li>
+</ul>
+<h4 id="get-apiv1servicepricesservicepriceid">GET <code>/api/v1/serviceprices/{ServicePriceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServicePriceID</code> (целое число, обязательное): Уникальный идентификатор цены на услугу.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретной цены на услугу.</li>
+</ul>
+<h4 id="put-apiv1servicepricesservicepriceid">PUT <code>/api/v1/serviceprices/{ServicePriceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServicePriceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля цены на услугу (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующую цену на услугу.</li>
+</ul>
+<h4 id="patch-apiv1servicepricesservicepriceid">PATCH <code>/api/v1/serviceprices/{ServicePriceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServicePriceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующую цену на услугу.</li>
+</ul>
+<h4 id="delete-apiv1servicepricesservicepriceid">DELETE <code>/api/v1/serviceprices/{ServicePriceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServicePriceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную цену на услугу.</li>
+</ul>
+<hr />
+<h3 id="_14">Услуги</h3>
+<h4 id="get-apiv1services">GET <code>/api/v1/services/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех услуг.</li>
+</ul>
+<h4 id="post-apiv1services">POST <code>/api/v1/services/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>Name</code> (строка, обязательное): Название услуги.</li>
+<li><code>Description</code> (строка, необязательное): Описание услуги.</li>
+<li><code>ServiceType</code> (строка, необязательное): Тип/категория услуги.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую услугу.</li>
+</ul>
+<h4 id="get-apiv1servicesserviceid">GET <code>/api/v1/services/{ServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServiceID</code> (целое число, обязательное): Уникальный идентификатор услуги.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретной услуги.</li>
+</ul>
+<h4 id="put-apiv1servicesserviceid">PUT <code>/api/v1/services/{ServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля услуги (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующую услугу.</li>
+</ul>
+<h4 id="patch-apiv1servicesserviceid">PATCH <code>/api/v1/services/{ServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующую услугу.</li>
+</ul>
+<h4 id="delete-apiv1servicesserviceid">DELETE <code>/api/v1/services/{ServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>ServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную услугу.</li>
+</ul>
+<hr />
+<h3 id="_15">Диагнозы Визитов</h3>
+<h4 id="get-apiv1visitdiagnoses">GET <code>/api/v1/visitdiagnoses/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех диагнозов визитов.</li>
+</ul>
+<h4 id="post-apiv1visitdiagnoses">POST <code>/api/v1/visitdiagnoses/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>VisitID</code> (целое число, обязательное): Идентификатор визита.</li>
+<li><code>DiagnosisID</code> (целое число, обязательное): Идентификатор диагноза.</li>
+<li><code>SpecificRecommendations</code> (строка, необязательное): Специфические рекомендации по лечению.</li>
+<li><code>VisitDiagnosisStatus</code> (строка, необязательное): Статус диагноза визита.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись диагноза визита.</li>
+</ul>
+<h4 id="get-apiv1visitdiagnosesvisitdiagnosisid">GET <code>/api/v1/visitdiagnoses/{VisitDiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitDiagnosisID</code> (целое число, обязательное): Уникальный идентификатор диагноза визита.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного диагноза визита.</li>
+</ul>
+<h4 id="put-apiv1visitdiagnosesvisitdiagnosisid">PUT <code>/api/v1/visitdiagnoses/{VisitDiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitDiagnosisID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля диагноза визита (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий диагноз визита.</li>
+</ul>
+<h4 id="patch-apiv1visitdiagnosesvisitdiagnosisid">PATCH <code>/api/v1/visitdiagnoses/{VisitDiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitDiagnosisID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий диагноз визита.</li>
+</ul>
+<h4 id="delete-apiv1visitdiagnosesvisitdiagnosisid">DELETE <code>/api/v1/visitdiagnoses/{VisitDiagnosisID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitDiagnosisID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный диагноз визита.</li>
+</ul>
+<hr />
+<h3 id="_16">Визиты</h3>
+<h4 id="get-apiv1visits">GET <code>/api/v1/visits/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех визитов.</li>
+</ul>
+<h4 id="post-apiv1visits">POST <code>/api/v1/visits/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>VisitDate</code> (дата, обязательное): Дата визита.</li>
+<li><code>VisitTime</code> (строка, обязательное): Время визита.</li>
+<li><code>CurrentConditionNotes</code> (строка, необязательное): Примечания по текущему состоянию.</li>
+<li><code>VisitStatus</code> (строка, необязательное): Статус визита.</li>
+<li><code>PatientID</code> (целое число, обязательное): Идентификатор пациента.</li>
+<li><code>DoctorID</code> (целое число, необязательное): Идентификатор врача.</li>
+<li><code>OfficeID</code> (целое число, необязательное): Идентификатор кабинета.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись визита.</li>
+</ul>
+<h4 id="get-apiv1visitsvisitid">GET <code>/api/v1/visits/{VisitID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitID</code> (целое число, обязательное): Уникальный идентификатор визита.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного визита.</li>
+</ul>
+<h4 id="put-apiv1visitsvisitid">PUT <code>/api/v1/visits/{VisitID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля визита (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующий визит.</li>
+</ul>
+<h4 id="patch-apiv1visitsvisitid">PATCH <code>/api/v1/visits/{VisitID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующий визит.</li>
+</ul>
+<h4 id="delete-apiv1visitsvisitid">DELETE <code>/api/v1/visits/{VisitID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретный визит.</li>
+</ul>
+<hr />
+<h3 id="_17">Услуги Визитов</h3>
+<h4 id="get-apiv1visitservices">GET <code>/api/v1/visitservices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех услуг визитов.</li>
+</ul>
+<h4 id="post-apiv1visitservices">POST <code>/api/v1/visitservices/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>PriceAtTime</code> (десятичное число, обязательное): Цена на момент оказания услуги.</li>
+<li><code>VisitID</code> (целое число, обязательное): Идентификатор визита.</li>
+<li><code>ServiceID</code> (целое число, обязательное): Идентификатор услуги.</li>
+<li><code>Quantity</code> (целое число, необязательное): Количество услуг.</li>
+<li><code>Status</code> (строка, необязательное): Статус услуги.</li>
+<li><code>PaymentStatus</code> (строка, необязательное): Статус платежа.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новую запись услуги визита.</li>
+</ul>
+<h4 id="get-apiv1visitservicesvisitserviceid">GET <code>/api/v1/visitservices/{VisitServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitServiceID</code> (целое число, обязательное): Уникальный идентификатор услуги визита.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретной услуги визита.</li>
+</ul>
+<h4 id="put-apiv1visitservicesvisitserviceid">PUT <code>/api/v1/visitservices/{VisitServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля услуги визита (такие же, как в POST).</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет существующую услугу визита.</li>
+</ul>
+<h4 id="patch-apiv1visitservicesvisitserviceid">PATCH <code>/api/v1/visitservices/{VisitServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong> Частичные поля для обновления.</li>
+<li><strong>Описание:</strong> Частично обновляет существующую услугу визита.</li>
+</ul>
+<h4 id="delete-apiv1visitservicesvisitserviceid">DELETE <code>/api/v1/visitservices/{VisitServiceID}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>VisitServiceID</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет конкретную услугу визита.</li>
+</ul>
+<hr />
+<h3 id="_18">Аутентификация</h3>
+<h4 id="post-authjwtcreate">POST <code>/auth/jwt/create/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>username</code> (строка, обязательное): Имя пользователя.</li>
+<li><code>password</code> (строка, обязательное): Пароль пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает пару JWT-токенов (доступ и обновление) с использованием учетных данных пользователя.</li>
+</ul>
+<h4 id="post-authjwtrefresh">POST <code>/auth/jwt/refresh/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>refresh</code> (строка, обязательное): Токен обновления.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Обновляет токен доступа, используя действительный токен обновления.</li>
+</ul>
+<h4 id="post-authjwtverify">POST <code>/auth/jwt/verify/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>token</code> (строка, обязательное): JWT-токен для проверки.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Проверяет действительность JWT-токена.</li>
+</ul>
+<h4 id="get-authusers">GET <code>/auth/users/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает список всех пользователей.</li>
+</ul>
+<h4 id="post-authusers">POST <code>/auth/users/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>username</code> (строка, обязательное): Желаемое имя пользователя.</li>
+<li><code>password</code> (строка, обязательное): Пароль.</li>
+<li><code>re_password</code> (строка, обязательное): Подтверждение пароля.</li>
+<li><code>email</code> (строка, необязательное): Адрес электронной почты пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Создает новый аккаунт пользователя.</li>
+</ul>
+<h4 id="post-authusersactivation">POST <code>/auth/users/activation/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>uid</code> (строка, обязательное): Идентификатор пользователя.</li>
+<li><code>token</code> (строка, обязательное): Токен активации.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Активирует аккаунт пользователя с помощью UID и токена.</li>
+</ul>
+<h4 id="get-authusersme">GET <code>/auth/users/me/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Получает детали аутентифицированного пользователя.</li>
+</ul>
+<h4 id="put-authusersme">PUT <code>/auth/users/me/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Поля пользователя для обновления.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет информацию о аутентифицированном пользователе.</li>
+</ul>
+<h4 id="patch-authusersme">PATCH <code>/auth/users/me/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Частичные поля пользователя для обновления.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Частично обновляет информацию о аутентифицированном пользователе.</li>
+</ul>
+<h4 id="delete-authusersme">DELETE <code>/auth/users/me/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong> Отсутствуют</li>
+<li><strong>Описание:</strong> Удаляет аккаунт аутентифицированного пользователя.</li>
+</ul>
+<h4 id="post-authusersresend_activation">POST <code>/auth/users/resend_activation/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>email</code> (строка, обязательное): Электронная почта пользователя для повторной отправки активации.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Повторно отправляет письмо активации пользователю.</li>
+</ul>
+<h4 id="post-authusersreset_password">POST <code>/auth/users/reset_password/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>email</code> (строка, обязательное): Электронная почта пользователя для начала сброса пароля.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Инициирует процесс сброса пароля, отправляя письмо для сброса.</li>
+</ul>
+<h4 id="post-authusersreset_password_confirm">POST <code>/auth/users/reset_password_confirm/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>uid</code> (строка, обязательное): Идентификатор пользователя.</li>
+<li><code>token</code> (строка, обязательное): Токен сброса пароля.</li>
+<li><code>new_password</code> (строка, обязательное): Новый пароль.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Подтверждает и завершает процесс сброса пароля.</li>
+</ul>
+<h4 id="post-authusersreset_username">POST <code>/auth/users/reset_username/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>email</code> (строка, обязательное): Электронная почта пользователя для начала сброса имени пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Инициирует процесс сброса имени пользователя, отправляя письмо для сброса.</li>
+</ul>
+<h4 id="post-authusersreset_username_confirm">POST <code>/auth/users/reset_username_confirm/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>new_username</code> (строка, обязательное): Новое желаемое имя пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Подтверждает и завершает процесс сброса имени пользователя.</li>
+</ul>
+<h4 id="post-authusersset_password">POST <code>/auth/users/set_password/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>new_password</code> (строка, обязательное): Новый пароль.</li>
+<li><code>current_password</code> (строка, обязательное): Текущий пароль.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Устанавливает новый пароль для аутентифицированного пользователя.</li>
+</ul>
+<h4 id="post-authusersset_username">POST <code>/auth/users/set_username/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Тело запроса:</strong><ul>
+<li><code>current_password</code> (строка, обязательное): Текущий пароль.</li>
+<li><code>new_username</code> (строка, обязательное): Новое желаемое имя пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Устанавливает новое имя пользователя для аутентифицированного пользователя.</li>
+</ul>
+<h4 id="get-authusersid">GET <code>/auth/users/{id}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>id</code> (целое число, обязательное): Уникальный идентификатор пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Получает детали конкретного пользователя.</li>
+</ul>
+<h4 id="put-authusersid">PUT <code>/auth/users/{id}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>id</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Все поля пользователя.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Полностью обновляет информацию о конкретном пользователе.</li>
+</ul>
+<h4 id="patch-authusersid">PATCH <code>/auth/users/{id}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>id</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Тело запроса:</strong><ul>
+<li>Частичные поля пользователя для обновления.</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Частично обновляет информацию о конкретном пользователе.</li>
+</ul>
+<h4 id="delete-authusersid">DELETE <code>/auth/users/{id}/</code></h4>
+<ul>
+<li><strong>Аргументы:</strong></li>
+<li><strong>Путь:</strong><ul>
+<li><code>id</code> (целое число, обязательное)</li>
+</ul>
+</li>
+<li><strong>Описание:</strong> Удаляет аккаунт конкретного пользователя.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
