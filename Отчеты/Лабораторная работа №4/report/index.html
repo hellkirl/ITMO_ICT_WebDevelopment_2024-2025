@@ -608,6 +608,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tsconfigjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      tsconfig.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      package.json
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -681,24 +699,6 @@
   <a href="#7-footertsx" class="md-nav__link">
     <span class="md-ellipsis">
       7. Footer.tsx
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tsconfigjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      tsconfig.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#packagejson" class="md-nav__link">
-    <span class="md-ellipsis">
-      package.json
     </span>
   </a>
   
@@ -805,6 +805,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tsconfigjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      tsconfig.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      package.json
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -883,24 +901,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#tsconfigjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      tsconfig.json
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#packagejson" class="md-nav__link">
-    <span class="md-ellipsis">
-      package.json
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -924,13 +924,13 @@
 <h1 id="_1">Отчет</h1>
 <h2 id="_2">Общая структура проекта</h2>
 <p>Проект состоит из нескольких основных директорий:</p>
-<p>src/ — содержит все компоненты и вспомогательный код;
-public/ — статические файлы для раздачи (HTML-макет, манифест, фавикон);
-api/ — вспомогательные модули для взаимодействия с REST API (axios);
-types/ — пользовательские типы и интерфейсы для удобной типизации.
-Технологии и инструменты
-React + TypeScript
-Используется компонентный подход, строгая типизация для повышения стабильности и предсказуемости кода.</p>
+<p>src/ — содержит все компоненты и вспомогательный код;</p>
+<p>public/ — статические файлы для раздачи (HTML-макет, манифест, фавикон);</p>
+<p>api/ — вспомогательные модули для взаимодействия с REST API (axios);</p>
+<p>types/ — пользовательские типы и интерфейсы для удобной типизации.</p>
+<p>Технологии и инструменты</p>
+<p>React + TypeScript</p>
+<p>Используется компонентный подход, строгая типизация для повышения стабильности и предсказуемости кода.</p>
 <h3 id="react-router">React Router</h3>
 <p>Реализована навигация, маршруты для разделов ("/patients", "/doctors", "/visits").</p>
 <h3 id="axios">Axios</h3>
@@ -940,6 +940,10 @@ React + TypeScript
 <p>Управление зависимостями и скриптами (npm start, npm run build).</p>
 <h3 id="apptsx">App.tsx</h3>
 <p>Подключает Router, разграничивает доступ к закрытым и публичным страницам.</p>
+<h3 id="tsconfigjson">tsconfig.json</h3>
+<p>Настраивает компилятор TypeScript (paths, target, strict режим).</p>
+<h3 id="packagejson">package.json</h3>
+<p>Содержит список пакетов, скрипты для разработки (npm start, npm run build).</p>
 <h2 id="_3">Компоненты</h2>
 <h3 id="1-headertsx">1. Header.tsx</h3>
 <ul>
@@ -1007,10 +1011,6 @@ React + TypeScript
 <li><strong>Описание:</strong> Нижний колонтитул приложения с дополнительной информацией и ссылками.</li>
 <li><strong>Реализация:</strong> Статическая информация или динамические ссылки.</li>
 </ul>
-<h3 id="tsconfigjson">tsconfig.json</h3>
-<p>Настраивает компилятор TypeScript (paths, target, strict режим).</p>
-<h3 id="packagejson">package.json</h3>
-<p>Содержит список пакетов, скрипты для разработки (npm start, npm run build).</p>
 
 
 
